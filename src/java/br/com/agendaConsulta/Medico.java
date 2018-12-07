@@ -5,6 +5,8 @@
  */
 package br.com.agendaConsulta;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author dlimalop, rukasugarushia
@@ -63,5 +65,19 @@ public class Medico {
 
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
+    }
+    
+    //usar esse método para logar com a secretaria
+    public static Medico getMedico(String login, String senha) throws Exception{
+        String SQL = "select * from Medico where login = ? and senha = ?";
+        Object parameters[] = {login, senha.hashcode()};
+        ArrayList<Object[]> list = DatabaseConnector.getQuery(SQL, parameters);
+        if(list.isEmpty()){
+            return null;
+        }else{
+            Object row[] = list.get(0); //cada row é um atributo da secretaria
+            Medico u = new Medico(/*dados secretaria*/); //Criar secretaria para usar no lugar do medico
+            return u;
+        }
     }
 }

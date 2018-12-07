@@ -7,10 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body><center><br>
-        <%@include file="WEB-INF/jspf/header.jspf" %>
-        <br>
-   
-           
+        <%@include file="WEB-INF/jspf/header.jspf" %>   
+        <div><bottom>
+            
+            </bottom>
+               
+           </div>
 </body>
 <%@include file="WEB-INF/jspf/footer.jspf" %>
 

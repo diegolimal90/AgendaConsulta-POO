@@ -4,27 +4,36 @@
       <tr>
       <td>
   <div class="card" style="width: 25rem;">
-      <div class="card-body" style="color:  #6699ff; height: 100px">
-    <h5 class="card-title">Passo 1:</h5>
-    <p class="card-text">Clique para começar <a href="session.jsp"> <button class="btn" style="background: #6699ff"> Entrar</button></a>  
+      <div class="card-body" style="color:  #222222; height: 200px">
+    <h5 class="card-title"> <center>Login </h5>
+  <table>
+ <tr>
+   <td><input type="text" name="nome" size="40" value="ID"> <br /></td>
+ </tr>
+ <tr>
+     <td><input type="text" name="sobrenome" size="40" value="Password">  <br /></td>
+ </tr>
+</table>
+
+    
+    
+    
+    <p class="card-text"><center><a href="session.jsp"> <button class="btn" style="background: #6699ff"> Entrar</button></a>  
 </p>
   </div>
   </div>
-      </td><td>
-  <div class="card" style="width: 25rem; color: #ccccff">
-  <div class="card-body">
-    <h5 class="card-title">Passo 2:</h5>
-    <p class="card-text">Registre-se</p>
-  </div>
-  </div>
-      </td><td>         
-  <div class="card" style="width: 25rem; color: #ccccff">
-  <div class="card-body">
-    <h5 class="card-title">Passo 3:</h5>
-    <p class="card-text" >Responda o questionário</p>
-  </div>
-  </div>
-      </td></tr>
+      </td>
+      </tr>
+      
+      <br>
+      <br>
+      <br>
+      <br>
+      
   </table>                
-  <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
             </div>

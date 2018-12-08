@@ -19,6 +19,15 @@ public class Medico {
     private String crm;
     private String especialidade;
 
+    public Medico(String nome, String cpf, String telefone, String endereco, String crm, String especialidade) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.endereco = endereco;
+        this.crm = crm;
+        this.especialidade = especialidade;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -67,17 +76,27 @@ public class Medico {
         this.especialidade = especialidade;
     }
     
-    //usar esse método para logar com a secretaria
-    public static Medico getMedico(String login, String senha) throws Exception{
-        String SQL = "select * from Medico where login = ? and senha = ?";
-        Object parameters[] = {login, senha.hashcode()};
-        ArrayList<Object[]> list = DatabaseConnector.getQuery(SQL, parameters);
-        if(list.isEmpty()){
-            return null;
-        }else{
-            Object row[] = list.get(0); //cada row é um atributo da secretaria
-            Medico u = new Medico(/*dados secretaria*/); //Criar secretaria para usar no lugar do medico
-            return u;
+    public static ArrayList<Medico> getMedico() throws Exception{
+        String SQL = "SELECT * FROM MEDICO";
+        ArrayList<Medico> medicos = new ArrayList<>();
+        ArrayList<Object[]> list = DatabaseConnector.getQuery(SQL, new Object(){});
+        for (int i=0; i<list.size(); i++){
+            Object row[] = list.get(i);
+            Medico med = new Medico((String) row[0], (String) row[1], (String) row[2], (String) row[3], (String) row[4], (String) row[5]);
+            medicos.add(med);
         }
+        return medicos;
+    }
+    
+    public static void addMedico(String nome, String cpf, String telefone, String endereco, String crm, String especialidade) throws Exception{
+        String SQL = "INSERT INTO MEDICO VALUES(?, ?, ?, ?, ?, ?)";
+        Object parameters[] = {nome, cpf, telefone, endereco, crm, especialidade};
+        DatabaseConnector.execute(SQL, parameters);
+    }
+    
+    public static void removeMedico(String crm) throws Exception{
+        String SQL = "DELETE FROM MEDICO WHERE CRM = ?";
+        Object parameters[] = {crm};
+        DatabaseConnector.execute(SQL, parameters);
     }
 }

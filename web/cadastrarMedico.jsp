@@ -13,7 +13,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body><center><br>
-        <%@include file="WEB-INF/jspf/header.jspf" %>   
+        <%@include file="WEB-INF/jspf/header.jspf" %>  
+        <form>  
+            Nome <input type="text" name="nome"/><br>
+            
+            CPF <input type="text" name="cpf"/><br>
+            
+            Telefone <input type="text" name="telefone"/><br>
+            
+            CRM <input type="text" name="cpf"/><br>
+            
+            Endereço <input type="text" name="endereco"/><br>
+            
+            Especialidade <input type="text" name="especialidade"/><br>
+            
+            <input type="submit" value="Enviar"/><br>    
+       </form> 
         <div><bottom>
             
             </bottom>

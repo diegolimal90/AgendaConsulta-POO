@@ -14,6 +14,24 @@
     </head>
     <body><center><br>
         <%@include file="WEB-INF/jspf/header.jspf" %>   
+        <form>  
+            Nome <input type="text" name="nome"/><br>
+            
+            Telefone <input type="text" name="telefone"/><br>
+            
+            CPF <input type="text" name="cpf"/><br>
+            
+            E-mail <input type="text" name="email"/><br>
+            
+            Celular <input type="text" name="celular"/><br>
+            
+            Endereço <input type="text" name="endereco"/><br>
+            
+            RG <input type="text" name="rg"/><br>
+            
+             <input type="submit" value="Enviar"/><br>    
+       </form> 
+        
         <div><bottom>
             
             </bottom>

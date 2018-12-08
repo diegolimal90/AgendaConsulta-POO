@@ -1,9 +1,3 @@
-<%@page import="br.com.agendaConsulta.Agenda"%>
-
-<%@page import="br.com.agendaConsulta.DataBase"%>
-<%@page import="br.com.agendaConsulta.Medico"%>
-<%@page import="br.com.agendaConsulta.Paciente"%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

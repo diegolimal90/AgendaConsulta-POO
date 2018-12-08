@@ -99,4 +99,10 @@ public class Medico {
         Object parameters[] = {crm};
         DatabaseConnector.execute(SQL, parameters);
     }
+    
+    public static void updateMedico(String telefone, String endereco, String crm){
+        String SQL = "UPDATE MEDICO SET TELEFONE = ?, ENDERECO = ? WHERE CRM = ?";
+        Object parameters[] = {telefone, endereco, crm};
+        DatabaseConnector.execute(SQL, parameters);
+    }
 }

@@ -109,4 +109,10 @@ public class Paciente {
         Object parameters[] = {cpf};
         DatabaseConnector.execute(SQL, parameters);
     }
+    
+    public static void updatePaciente(String email, String telefone, String celular, String endereco, String cpf){
+        String SQL = "UPDATE PACIENTE SET EMAIL = ?, TELEFONE = ?, CELULAR = ?, ENDERECO = ? WHERE CPF = ?";
+        Object parameters[] = {email, telefone, celular, endereco, cpf};
+        DatabaseConnector.execute(SQL, parameters);
+    }
 }

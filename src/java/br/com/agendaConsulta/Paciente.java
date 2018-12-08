@@ -90,14 +90,14 @@ public class Paciente {
     }
     
     public static ArrayList<Paciente> getPaciente() throws Exception{
-//        String SQL = "SELECT * FROM PACIENTE";
+        String SQL = "SELECT * FROM PACIENTE";
         ArrayList<Paciente> pacientes = new ArrayList<>();
-//        ArrayList<Object[]> list = DatabaseConnector.getQuery(SQL, new Object(){});
-//        for (int i=0; i<list.size(); i++){
-//            Object row[] = list.get(i);
-//            Paciente paciente = new Paciente((String) row[0], (String) row[1], (String) row[2], (String) row[3], (String) row[4], (String) row[5], (String) row[6]);
-//            pacientes.add(paciente);
-//        }
+        ArrayList<Object[]> list = DatabaseConnector.getQuery(SQL, new Object[]{});
+        for (int i=0; i<list.size(); i++){
+            Object row[] = list.get(i);
+            Paciente paciente = new Paciente((String) row[0], (String) row[1], (String) row[2], (String) row[3], (String) row[4], (String) row[5], (String) row[6]);
+            pacientes.add(paciente);
+        }
         return pacientes;
     }
     
@@ -113,7 +113,7 @@ public class Paciente {
 //        DatabaseConnector.execute(SQL, parameters);
     }
     
-    public static void updatePaciente(String email, String telefone, String celular, String endereco, String cpf){
+    public static void updatePaciente(String email, String telefone, String celular, String endereco, String cpf) throws Exception{
         String SQL = "UPDATE PACIENTE SET EMAIL = ?, TELEFONE = ?, CELULAR = ?, ENDERECO = ? WHERE CPF = ?";
         Object parameters[] = {email, telefone, celular, endereco, cpf};
 //        DatabaseConnector.execute(SQL, parameters);;

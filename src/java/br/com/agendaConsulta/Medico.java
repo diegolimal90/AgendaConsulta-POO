@@ -80,14 +80,14 @@ public class Medico {
     }
     
     public static ArrayList<Medico> getMedico() throws Exception{
-//        String SQL = "SELECT * FROM MEDICO";
+        String SQL = "SELECT * FROM MEDICO";
         ArrayList<Medico> medicos = new ArrayList<>();
-//        ArrayList<Object[]> list = DatabaseConnector.getQuery(SQL, new Object()[]);
-//        for (int i=0; i<list.size(); i++){
-//            Object row[] = list.get(i);
-//            Medico med = new Medico((String) row[0], (String) row[1], (String) row[2], (String) row[3], (String) row[4], (String) row[5]);
-//            medicos.add(med);
-//        }
+        ArrayList<Object[]> list = DatabaseConnector.getQuery(SQL, new Object[]{});
+        for (int i=0; i<list.size(); i++){
+            Object row[] = list.get(i);
+            Medico med = new Medico((String) row[0], (String) row[1], (String) row[2], (String) row[3], (String) row[4], (String) row[5]);
+            medicos.add(med);
+        }
         return medicos;
     }
     
@@ -103,9 +103,9 @@ public class Medico {
 //        DatabaseConnector.execute(SQL, parameters);
     }
     
-    public static void updateMedico(String telefone, String endereco, String crm){
+    public static void updateMedico(String telefone, String endereco, String crm) throws Exception{
         String SQL = "UPDATE MEDICO SET TELEFONE = ?, ENDERECO = ? WHERE CRM = ?";
         Object parameters[] = {telefone, endereco, crm};
-//        DatabaseConnector.execute(SQL, parameters);
+        DatabaseConnector.execute(SQL, parameters);
     }
 }

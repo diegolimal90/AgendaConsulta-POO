@@ -5,6 +5,7 @@
  */
 package br.com.agendaConsulta;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -13,15 +14,15 @@ import java.util.GregorianCalendar;
  * @author dlimalop, rukasugarushia
  */
 public class Agenda {
-    private GregorianCalendar dtConsulta = new GregorianCalendar();
+    private LocalDateTime dtConsulta;
     private Medico medico = new Medico();
     private Paciente paciente = new Paciente();
 
-    public GregorianCalendar getDtConsulta() {
+    public LocalDateTime getDtConsulta() {
         return dtConsulta;
     }
 
-    public void setDtConsulta(GregorianCalendar dtConsulta) {
+    public void setDtConsulta(LocalDateTime dtConsulta) {
         this.dtConsulta = dtConsulta;
     }
 

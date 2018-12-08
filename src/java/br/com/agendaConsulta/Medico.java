@@ -19,6 +19,9 @@ public class Medico {
     private String crm;
     private String especialidade;
 
+    public Medico() {
+    }
+    
     public Medico(String nome, String cpf, String telefone, String endereco, String crm, String especialidade) {
         this.nome = nome;
         this.cpf = cpf;

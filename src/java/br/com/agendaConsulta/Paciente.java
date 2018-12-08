@@ -20,6 +20,9 @@ public class Paciente {
     private String celular;
     private String endereco;
 
+    public Paciente() {
+    }
+
     public Paciente(String nome, String rg, String cpf, String email, String telefone, String celular, String endereco) {
         this.nome = nome;
         this.rg = rg;

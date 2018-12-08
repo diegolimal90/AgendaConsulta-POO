@@ -14,19 +14,24 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item active">
                   <a class="nav-link" href="home.jsp">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="cadastrarPaciente.jsp">Cadastrar Paciente</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Paciente</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="paciente.jsp">Cadastrar</a>
+                      <a class="dropdown-item" href="listarPaciente.jsp">Pacientes</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/POO3/Pessoa/listPessoa.jsp">Pessoas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/POO3/Veiculo/listVeiculo.jsp">Veiculos</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Medicos</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="medico.jsp">Cadastrar</a>
+                      <a class="dropdown-item" href="listarMedico.jsp">Medicos</a>
+                    </div>
                 </li>
               </ul>
             </div>

@@ -18,9 +18,9 @@ import java.util.ArrayList;
 public class DatabaseConnector {
 
     private static final String DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
-    private static final String URL = "jdbc:derby://localhost:1527/agendaCons [ellmored em ELLMORED2]";
-    private static final String USER = "cassiano";
-    private static final String PASS = "cassiano";
+    private static final String URL = "jdbc:derby://localhost:1527/agendaCons";
+    private static final String USER = "root";
+    private static final String PASS = "root";
     
     public static ArrayList<Object[]> getQuery (String SQL, Object[] parameters)
         throws Exception{
@@ -36,7 +36,7 @@ public class DatabaseConnector {
         while(rs.next()){
         Object row [] = new Object[rs.getMetaData().getColumnCount()];
             int i;
-        for(i = 0; i <= rs.getMetaData().getColumnCount(); i++ ){
+        for(i = 0; i < rs.getMetaData().getColumnCount(); i++ ){
         row[i] = rs.getObject(i+1);
             
         }
@@ -59,7 +59,8 @@ public class DatabaseConnector {
             stmt.setObject(i+1,parameters[i]);
         }
         stmt.execute();
-        stmt.close();con.close();
+        stmt.close();
+        con.close();
     }
     
 }

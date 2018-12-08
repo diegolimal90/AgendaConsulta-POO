@@ -1,4 +1,6 @@
-<%@include file="WEB-INF/jspf/header.jspf" %>   
+<%@page import="br.com.agendaConsulta.Paciente"%>
+<%@include file="WEB-INF/jspf/header.jspf" %>
+
 <% 
     String msg = null;
     try{
@@ -11,7 +13,7 @@
            String celular = request.getParameter("celular");
            String endereco = request.getParameter("endereco");
 
-           Agenda.addAgenda(nome, rg, cpf, email, telefone, celular, endereco);
+           Paciente.addPaciente(nome, rg, cpf, email, telefone, celular, endereco);
            response.sendRedirect("listarPaciente.jsp");
         }   
     }catch (Exception e){
@@ -28,14 +30,25 @@
                 <h1 class="display-4">Cadastar Paciente</h1>
                 <hr />
                 <div class="form-group">
-                    <label>Data</label> <input class="form-control" type="text" name="data" />    
+                    <label>Nome</label> <input class="form-control" type="text" name="nome" />    
                 </div>
                 <div class="form-group">
-                    <label>Paciente</label> <input class="form-control" type="text" name="paciente" />
-                    <input type="hidden" name="id" values="">
+                    <label>Telefone</label> <input class="form-control" type="text" name="telefone"/>    
                 </div>
                 <div class="form-group">
-                    <label>Medico</label> <input class="form-control" type="text" name="email"/>    
+                    <label>CPF</label> <input class="form-control" type="text" name="cpf"/>    
+                </div>
+                <div class="form-group">
+                    <label>RG</label> <input class="form-control" type="text" name="rg"/>    
+                </div>
+                <div class="form-group">
+                    <label>E-mail</label> <input class="form-control" type="text" name="email"/>    
+                </div>
+                <div class="form-group">
+                    <label>Celular</label> <input class="form-control" type="text" name="celular"/>    
+                </div>
+                <div class="form-group">
+                    <label>Endereço</label> <input class="form-control" type="text" name="endereco"/>    
                 </div>
                 <button type="submit" class="btn btn-primary" name="frmpasciente" value="salvar">Salvar</button>    
             </form>  

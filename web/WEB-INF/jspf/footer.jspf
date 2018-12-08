@@ -1,5 +1,5 @@
 <!------ Include the above in your HEAD tag ---------->
-<footer style="background-color: #212529" ><br>
+<footer style="background-color: #212529" class="fixed-bottom"><br>
     <h5 align="center" id="rodape" style="color: #b1aca1">Contato da Equipe no GitHub </h5>
 
     <div class="footer-top"> 
@@ -23,17 +23,16 @@
                 </li>
             </ul>   
         </div> 
+    </div>
+
+    <div class="copyright text-white">
+        <div class="container">
+            <div align="center">
+               <p>Copyright © 2018 All rights reserved</p>
+            </div>
+        </div>
     </div>    
 </footer>
-    
-    
-<div class="copyright">
-    <div class="container">
-        <div align="center">
-           <p>Copyright © 2018 All rights reserved</p>
-        </div>
-    </div>
-</div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </body>

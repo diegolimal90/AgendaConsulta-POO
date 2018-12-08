@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author dlimalop, rukasugarushia
  */
 public class Paciente {
+    private int id;
     private String nome;
     private String rg;
     private String cpf;
@@ -23,7 +24,8 @@ public class Paciente {
     public Paciente() {
     }
 
-    public Paciente(String nome, String rg, String cpf, String email, String telefone, String celular, String endereco) {
+    public Paciente(int id, String nome, String telefone, String cpf, String email, String celular, String endereco, String rg) {
+        this.id = id;
         this.nome = nome;
         this.rg = rg;
         this.cpf = cpf;
@@ -31,6 +33,14 @@ public class Paciente {
         this.telefone = telefone;
         this.celular = celular;
         this.endereco = endereco;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -95,27 +105,28 @@ public class Paciente {
         ArrayList<Object[]> list = DatabaseConnector.getQuery(SQL, new Object[]{});
         for (int i=0; i<list.size(); i++){
             Object row[] = list.get(i);
-            Paciente paciente = new Paciente((String) row[0], (String) row[1], (String) row[2], (String) row[3], (String) row[4], (String) row[5], (String) row[6]);
+            Paciente paciente = new Paciente((int) row[0],(String) row[1], (String) row[2], (String) row[3], (String) row[4], (String) row[5], (String) row[6], (String) row[7]);
             pacientes.add(paciente);
         }
         return pacientes;
     }
     
     public static void addPaciente(String nome, String rg, String cpf, String email, String telefone, String celular, String endereco) throws Exception{
-        String SQL = "INSERT INTO PACIENTE VALUES(?, ?, ?, ?, ?, ?, ?)";
+        String SQL = "INSERT INTO PACIENTE (NOME, RG, CPF, EMAIL, TELEFONE, CELULAR, ENDERECO)"
+                + "VALUES(?, ?, ?, ?, ?, ?, ?)";
         Object parameters[] = {nome, rg, cpf, email, telefone, celular, endereco};
-//        DatabaseConnector.execute(SQL, parameters);
+        DatabaseConnector.execute(SQL, parameters);
     }
     
-    public static void removePaciente(String cpf) throws Exception{
-        String SQL = "DELETE FROM PACIENTE WHERE CPF = ?";
-        Object parameters[] = {cpf};
-//        DatabaseConnector.execute(SQL, parameters);
+    public static void removePaciente(int id) throws Exception{
+        String SQL = "DELETE FROM PACIENTE WHERE ID = ?";
+        Object parameters[] = {id};
+        DatabaseConnector.execute(SQL, parameters);
     }
     
-    public static void updatePaciente(String email, String telefone, String celular, String endereco, String cpf) throws Exception{
-        String SQL = "UPDATE PACIENTE SET EMAIL = ?, TELEFONE = ?, CELULAR = ?, ENDERECO = ? WHERE CPF = ?";
-        Object parameters[] = {email, telefone, celular, endereco, cpf};
-//        DatabaseConnector.execute(SQL, parameters);;
+    public static void updatePaciente(String email, String telefone, String celular, String endereco, String cpf, int id) throws Exception{
+        String SQL = "UPDATE PACIENTE SET EMAIL = ?, TELEFONE = ?, CELULAR = ?, ENDERECO = ? CPF = ? WHERE ID = ?";
+        Object parameters[] = {email, telefone, celular, endereco, cpf, id};
+        DatabaseConnector.execute(SQL, parameters);
     }
 }

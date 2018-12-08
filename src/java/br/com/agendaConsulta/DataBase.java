@@ -10,5 +10,16 @@ package br.com.agendaConsulta;
  * @author dlimalop
  */
 public class DataBase {
+
+    public DataBase() {
+        
+    }
     
+    public void abreConexao(){
+        
+    }
+    
+    public void fechaConexao(){
+        
+    }
 }
